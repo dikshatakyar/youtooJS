@@ -83,10 +83,8 @@ const GName = {
 
 let printMyName = ApplyTheName.bind(GName, "Gaya", "Bihar", "23");
 
-
 printMyName();
 // console.log(printMyName);
-
 
 /**
  * SUMMARY :
@@ -94,6 +92,3 @@ printMyName();
  * - APPLY : similar to call, just takes second arg as array
  * - BIND :does not directly invoke, but gives a copy of that method
  */
-
-
-
