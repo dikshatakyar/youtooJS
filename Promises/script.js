@@ -7,17 +7,17 @@
 
 const cart = ["shoes", "kurta", "tshirt"];
 
-createOrder(cart, function (orderId) {
-  proceedToPayment(orderId, function (paymentInfo) {
-    showOrderSummary(paymentInfo, function () {
-      updateWallet();
-    });
-  });
-});
+// createOrder(cart, function (orderId) {
+//   proceedToPayment(orderId, function (paymentInfo) {
+//     showOrderSummary(paymentInfo, function () {
+//       updateWallet();
+//     });
+//   });
+// });
 
 //CHANGING FROM CALLBACK HELL TO PROMISES :-
 
-const promise = createOrder(cart);
+// const promise = createOrder(cart);
 
 /**
 - this returns us a promise and promise is like an empty object with some data value in it. The data value will hold whatever the API will return to us.
@@ -28,17 +28,17 @@ const promise = createOrder(cart);
 - the above example, once we have the order details, we attach a callback function to promise object.
  */
 
-promise
-  .then(function (orderId) {
-    return proceedToPayment(orderId);
-  })
-  .then(
-    function (paymentInfo) {
-      return showOrderSummary(paymentInfo);
-    }.then(function (paymentInfo) {
-      return updateWallet(paymentInfo);
-    })
-  );
+// promise
+//   .then(function (orderId) {
+//     return proceedToPayment(orderId);
+//   })
+//   .then(
+//     function (paymentInfo) {
+//       return showOrderSummary(paymentInfo);
+//     }.then(function (paymentInfo) {
+//       return updateWallet(paymentInfo);
+//     })
+//   );
 //whenever we attach a lot of callback in this promise chain, we use to pipe the data, we want the data to flow in the whole chain. for that, we need to return the promise when we are chaining it.
 
 // {data : orderDetails}
@@ -62,7 +62,7 @@ const user = fetch(GITHUB_API);
  * STATE OF PROMISE - in what state the promise is, initially, it would be pending and (once we got the data back) then fulfilled.
  */
 
-console.log(user);
+console.log("USER : ", user);
 /** it shows pending, but expanding the state shows fulfilled.
  *
  * - when the console log statement is executed, at that point, the promise is in pending state. JS engine does not waits for anything and quikly executes it.
