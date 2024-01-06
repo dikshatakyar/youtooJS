@@ -2,6 +2,10 @@ function x() {
   const x = 18;
   setTimeout(() => console.log(x), 1000);
   console.log("JavaScipt...");
+  console.log("JavaScipt2...");
+  console.log("JavaScipt3...");
+  console.log("JavaScipt4...");
+  console.log("JavaScipt5...");
 }
 x();
 
