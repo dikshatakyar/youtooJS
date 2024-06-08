@@ -4,11 +4,12 @@
  * - CORS is a mechanism which uses additional HTTP headers to tell the browser whether a specific webapp can share resource with another webapp. Both the web app should have different origin.
  * 
  * - by origin we mean : dikshatakyar.in 
- * suppose this website wants to request data from another domain like : google.com/api/getdata 
+ * suppose this website wants to request data from another domain like : google.com/api/getData 
  * so this was not allowed, even if we call subdomains like : api.dikshatakyar.in (this was not allowed) and neither different ports, like making request to : dikshatakyar.in:5050. Neither different protocols were allowed like calling an HTTP from HTTPS.
  * 
  * when CORS became a standard, the browser allowed all the above things. 
  */
+
 
 
 /**
@@ -19,7 +20,11 @@
  * 
  * 
  * 2. ADDITIONAL HTTP HEADER :
- *  : Accept-Conrol-Allow-Origin (this is set as * as any domain can access it)
+ *  : Access-Control-Allow-Origin (this is set as * as any domain can access it)
+ *  EG : Access-Control-Allow-Origin: *
+        Access-Control-Allow-Origin: <origin>
+        Access-Control-Allow-Origin: null
+
  * 
  * 
  * 

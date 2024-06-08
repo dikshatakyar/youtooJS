@@ -43,6 +43,8 @@ const Ages = Users.reduce((acc, curr) => {
   return acc;
 }, {});
 
+
+
 console.log(Ages);
 
 /** TASK3 : find the first name of all the people whose age is less than 21 */

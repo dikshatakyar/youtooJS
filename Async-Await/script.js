@@ -12,12 +12,12 @@
  */
 
 async function getData() {
-  return "HELLO";
+  return "HELLO I AM A VALUE";
 }
 
-const dataPromise = getData();
+// const dataPromise = getData();
 
-// dataPromise.then((res)=> console.log(res));
+// dataPromise.then((res) => console.log(res));
 
 /** creating a promise and returning it : */
 
@@ -25,11 +25,11 @@ const Pr = new Promise((resolve, reject) => {
   resolve("PROMISE RESOLVED VALUE");
 });
 
-async function func() {
-  return Pr;
-}
+// async function func() {
+//   return Pr;
+// }
 
-const getPrData = func();
+// const getPrData = func();
 
 // getPrData.then((res) => console.log(res));
 
@@ -43,9 +43,9 @@ const learnPromise = new Promise((resolve, reject) =>
   resolve("PROMISE GETS RESOLVED")
 );
 
-// function learnPromiseFunc(){
-//     learnPromise.then((res) => console.log(res));
-// }
+function learnPromiseFunc() {
+  learnPromise.then((res) => console.log(res));
+}
 
 // learnPromiseFunc();
 
@@ -56,7 +56,6 @@ const learnPromise = new Promise((resolve, reject) =>
 
 async function handleAsyncPromise() {
   const val = await learnPromise;
-  console.log(val);
 }
 
 // handleAsyncPromise();
@@ -71,13 +70,13 @@ async function handleAsyncPromise() {
 const promise2 = new Promise((resolve, reject) => {
   setTimeout(() => {
     resolve("PROMISE2 RESOLVED NOW");
-  }, 20000);
+  }, 10000);
 });
 
 const promise3 = new Promise((resolve, reject) => {
   setTimeout(() => {
     resolve("PROMISE3 RESOLVED NOW");
-  }, 40000);
+  }, 4000);
 });
 
 async function handlePromise2() {
@@ -104,16 +103,16 @@ handlePromise2();
  * i.e when we see the await keyword, the function execution suspends for that time.
  * It will wait till promise2 is resolved, then only it will move ahead.
  * after the given time, handlePromise2 will again come to the callstack and it will start executing from where it left.
- * JS engine isn't waiting for the promise to be resolved, but the handlePromise2() will suspend the execution till the promise is not resolved.
+ * JS engine isn't waiting for the promise to be resolved, but the handlePromise2() will suspend the execution till the promise is not resolved. [VERY VERY IMPORTANT]
  *
  */
 
 /** using our older way of handling promises */
 
-// function getPromise2Data(){
-//   /** JS engine will not wait for the promise to be resolved. */
-//     promise2.then((res)=> console.log(res));
-//     console.log("I GOT PRINTED !!");
-// }
+function getPromise2Data() {
+  /** JS engine will not wait for the promise to be resolved. */
+  promise3.then((res) => console.log(res));
+  console.log("I GOT PRINTED !!");
+}
 
-// getPromise2Data();
+getPromise2Data();

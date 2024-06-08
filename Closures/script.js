@@ -1,10 +1,12 @@
-function x(){
-    let a = 22;
-    function y(){
-        console.log(a);
-    }
-    return y; 
+function x() {
+  var a = 22;
+  return function y() {
+    console.log(a);
+  };
 }
 
 const z = x();
 z();
+
+//CLOSURES : WHEN FUNCTIONS ARE RETURNED FROM ANOTHER FUNCTION, THEY STILL MAINTAIN THEIR LEXICAL SCOPE.
+// A FUNCTION BIND TOGETHER WITH IT'S LEXICAL ENVIORNMENT FORMS A CLOSURE
